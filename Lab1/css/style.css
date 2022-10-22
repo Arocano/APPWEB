@@ -1,0 +1,138 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+ body,html,article,aside,footer,h3,nav,h1,h2{
+    margin: 0;
+    padding:0;
+ }
+
+/* Etiques estrucuturales */
+body{
+    width: 98%;
+    margin: 0 auto;
+    background-color: #F7ECE1;
+}
+header{
+    height: 90px;
+    background-color: #CAC4CE;
+    
+}
+section{
+    background-color: #CAC4CE;
+    height: 490px;
+   
+}
+article{
+    width: 60%;
+    float: left;
+    margin-left: 2% ;
+}
+
+aside{
+width: 34%;
+float: right;
+margin-right: 2%;
+}
+
+footer{
+
+height:60px ;
+background-color: #242038 ;
+
+}
+
+
+    
+
+/* Estilos */
+h1{
+    color: #725AC1;
+    text-align: center;
+}
+
+h2 {
+    color: #8D86C9;
+    text-align: center;
+}
+h3  {
+    clear: both;
+    text-align: center;
+    color: #725AC1;
+    font-size: .8em;
+    padding-top: 1em;
+}
+h4{
+    color:#725AC1;
+   font-size: 30px;
+}
+p{
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Clases */
+.izq{
+    float: left;  
+    margin-right: 1em ;
+    width: 50%;
+    
+}
+.der{
+    float: right;   
+    margin-left: 1em ;
+    width: 30%;
+
+}
+.logo{
+    float: left;
+    width: 10%;
+    margin-left: 10px;
+}
+.textHeader{
+    width: 70%;
+    float: left;
+}
+
+/* Menu */
+.dropDown_item{
+    float: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    text-align: right;
+    margin-top: 10px;
+    padding: 1em;
+    position: relative;
+
+}
+
+.dropDown_item a{
+    columns: #ad9a27;
+    text-decoration: none;
+
+}
+
+.dropDown_item .menu{
+    margin-top: 5px;
+    display: none;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #242038;
+    box-shadow: 1px 1px 2px #304345;
+    position: absolute;
+    min-width: 60px;
+}
+
+.menu a{
+    color: #DCEBDD;
+}
+
+.dropDown_item a:hover{
+    columns: #242038;
+    text-decoration: none;
+}
+
+.dropDown_item:hover .menu{
+    display: block;
+}
+    
