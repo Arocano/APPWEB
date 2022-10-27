@@ -1,5 +1,13 @@
-<div>
-  <cmv-header></cmv-header>
-  <cmv-page-login>  </cmv-page-login> 
-  
-</div>
+<mat-sidenav-container autosize="true">
+  <mat-sidenav opened="true" mode="side">
+    <div class="opciones">
+      <h3>Opciones del Sistema</h3>
+    </div>
+    <cmv-menu></cmv-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <cmv-header></cmv-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

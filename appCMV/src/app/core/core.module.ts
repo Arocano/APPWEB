@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     PageLoginComponent,
@@ -26,11 +29,14 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    RouterModule
   ]
   ,exports: [
     PageLoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    MenuComponent
   ]
 })
 export class CoreModule { }

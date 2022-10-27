@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IMenu, MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'cmv-menu',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  listMenu: IMenu[];
+  constructor(
+    private menuService:MenuService
+  ) { 
+    this.listMenu = this.menuService.getMenu();
+  }
 
   ngOnInit(): void {
   }
