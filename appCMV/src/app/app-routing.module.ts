@@ -4,7 +4,13 @@ import { PageLoginComponent } from './core/pages/page-login/page-login.component
 
 const routes: Routes = [
   {path:'',component:PageLoginComponent},
-  {path:'agencias', loadChildren:() => import('./agencias/agencias.module').then(m => m.AgenciasModule)}
+  {path:'agencias', loadChildren:() => import('./agencias/agencias.module').then(m => m.AgenciasModule)},
+  {path:'canales', loadChildren:() => import('./canales/canales.module').then(m => m.CanalesModule)},
+  {path:'clientes', loadChildren:() => import('./clientes/clientes.module').then(m => m.ClientesModule)},
+  {path:'mantenimientos', loadChildren:() => import('./mantenimientos/mantenimientos.module').then(m => m.MantenimientosModule)},
+  {path:'mecanicos', loadChildren:() => import('./mecanicos/mecanicos.module').then(m => m.MecanicosModule)},
+  {path:'seguimiento', loadChildren:() => import('./seguimiento/seguimiento.module').then(m => m.SeguimientoModule)},
+
   
 ];
 
