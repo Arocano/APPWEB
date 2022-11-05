@@ -9,5 +9,14 @@
       </a>
       </mat-list-item>
     </div>
-  </mat-nav-list>
+    <div>
+      <mat-list-item>
+        <button mat-icon-button color="accent" (click)="toggleExpanded()">
+          <mat-icon *ngIf="expanded">arrow_back_ios</mat-icon>
+  
+          <mat-icon *ngIf="!expanded">arrow_forward_ios</mat-icon>
+        </button>
+      </mat-list-item>
+    </div>
+</mat-nav-list>
     

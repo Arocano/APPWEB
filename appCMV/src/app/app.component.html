@@ -1,9 +1,9 @@
 <mat-sidenav-container autosize="true">
   <mat-sidenav opened="true" mode="side">
     <div class="opciones">
-      <h3>Opciones del Sistema</h3>
+      <h3 *ngIf="expanded">Opciones del Sistema</h3>
     </div>
-    <cmv-menu></cmv-menu>
+    <cmv-menu (onToggleExpanded)="toggleExpanded($event)"></cmv-menu>
   </mat-sidenav>
   <mat-sidenav-content>
     <cmv-header></cmv-header>

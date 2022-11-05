@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'appCMV';
+  expanded = true;
+  toggleExpanded(expanded: boolean){
+    this.expanded = expanded;
+  }
 }

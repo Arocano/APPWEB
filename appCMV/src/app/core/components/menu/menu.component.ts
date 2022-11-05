@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IMenu, MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -7,8 +7,9 @@ import { IMenu, MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+ @Output() onToggleExpanded: EventEmitter<boolean> = new EventEmitter<boolean>();
   listMenu: IMenu[];
+  expanded = true;
   constructor(
     private menuService:MenuService
   ) { 
@@ -16,6 +17,10 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  toggleExpanded(){
+    this.expanded = !this.expanded;
+    this.onToggleExpanded.emit(this.expanded);
   }
 
 }

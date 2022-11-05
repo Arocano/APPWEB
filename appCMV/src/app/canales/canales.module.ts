@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CanalesRoutingModule } from './canales-routing.module';
 import { PageListsComponent } from './pages/page-lists/page-lists.component';
+import { ShareModule } from '../share/share.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PageListsComponent } from './pages/page-lists/page-lists.component';
   ],
   imports: [
     CommonModule,
-    CanalesRoutingModule
+    CanalesRoutingModule,
+    ShareModule
   ]
 })
 export class CanalesModule { }
