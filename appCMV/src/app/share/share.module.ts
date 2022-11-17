@@ -8,12 +8,15 @@ import {MatCardModule} from '@angular/material/card';
 import { TableComponent } from './components/table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     TitleComponent,
     ContainerComponent,
-    TableComponent
+    TableComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule,
@@ -21,13 +24,15 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     FlexLayoutModule,
     MatCardModule,
     MatTableModule,
+    MatPaginatorModule
      
   ],
   exports: [
     TitleComponent,
     ContainerComponent,
     TableComponent,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    PaginatorComponent
   ]
 })
 export class ShareModule {
