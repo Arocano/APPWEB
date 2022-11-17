@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import { TableComponent } from './components/table/table.component';
 import {MatTableModule} from '@angular/material/table';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import {MatTableModule} from '@angular/material/table';
     MatToolbarModule,
     FlexLayoutModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+     
   ],
   exports: [
     TitleComponent,
     ContainerComponent,
-    TableComponent
+    TableComponent,
+    PerfectScrollbarModule
   ]
 })
 export class ShareModule {
