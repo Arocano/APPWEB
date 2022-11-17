@@ -5,22 +5,26 @@ import { ContainerComponent } from './components/container/container.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
-
+import { TableComponent } from './components/table/table.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
     TitleComponent,
-    ContainerComponent
+    ContainerComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   exports: [
     TitleComponent,
-    ContainerComponent
+    ContainerComponent,
+    TableComponent
   ]
 })
 export class ShareModule {

@@ -4,7 +4,7 @@
         <a [routerLink]="menu.url">
         <button mat-icon-button>
           <img [src]="menu.icon" alt="">
-          <span>{{menu.title}}</span>
+          <span *ngIf="expanded">{{menu.title}}</span>
         </button>
       </a>
       </mat-list-item>
