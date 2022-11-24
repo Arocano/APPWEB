@@ -1,19 +1,30 @@
 <cmv-title></cmv-title>
 <cmv-container>
-    <perfect-scrollbar class="heigthMaxScrollbar">
-        <cmv-table [data]="data" [metaDataColumns]="metaDataColumns"></cmv-table>
-        <ng-container matColumnDef="actions">
-            <th mat-header-cell="matHeaderDef"></th>
-            <td mat-cell *matCellDef="let row">
-                <button mat-icon-button color="primary" (click)="openForm()" matTooltip="editar">
-                      <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button color="accent" (click)="delete(row.id)" matTooltip="eliminar">
-                    <mat-icon>delete</mat-icon>
-              </button>
-            </td>
-        </ng-container>
+    <perfect-scrollbar class="heightMaxScrollbar">
+        <cmv-table [data]="data" [metaDataColumns]="metaDataColumns">
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let row" class="align-button">
+                    <button 
+                        mat-icon-button
+                        color="primary"
+                        (click)="openForm()"
+                        matTooltip="EDITAR">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button 
+                        mat-icon-button
+                        color="accent"
+                        (click)="delete(row.id)"
+                        matTooltip="ELIMINAR">
+                        <mat-icon>delete</mat-icon>
+                    </button>                
+                </td>
+            </ng-container>
+        </cmv-table>    
     </perfect-scrollbar>
     <cmv-paginator (onChangePage)="changePage($event)"[lenght]="totalRecords"></cmv-paginator>
 </cmv-container>
+<cmv-keypad-button [keypadButton]="keypadButton" (onClick)="doAction($event)"></cmv-keypad-button>
+
 

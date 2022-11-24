@@ -24,7 +24,7 @@ columns:string[]=[]
       this.columns=this.metaDataColumns.map((x)=>x.field)
     }
   }
-  ngOnAfterContentInit(){
+  ngAfterContentInit(){
     if(!this.columnDef){return}
     this.columnDef.forEach(columnDef => {
       this.columns.push(columnDef.name);

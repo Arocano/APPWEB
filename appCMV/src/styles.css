@@ -3,6 +3,9 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.heigthMaxScrollbar{
+.heightMaxScrollbar{
 height: 90%;
 }
+.align-button{
+    text-align: right;
+  }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { DownloadComponent } from 'src/app/share/components/download/download.component';
+import { keypadButton } from 'src/app/share/interfaces/keypad.interface';
 import { MetaDataColumn } from 'src/app/share/interfaces/metacolumn.interface';
 import { environment } from 'src/environments/environment';
 
@@ -53,8 +56,18 @@ metaDataColumns:MetaDataColumn[]=[
 ]
 data:any[]=[]
 totalRecords=this.data.length
-  constructor() {
-    this.loadAgencies()
+keypadButton:keypadButton[]=[
+  {  icon:"cloud_download",
+  tooltip:"Exportar",
+  color:"accent",
+  action:"download"},
+  {  icon:"add",
+  tooltip:"agregar",
+  color:"primary",
+  action:"new"},
+]
+  constructor(private bottomSheet:MatBottomSheet) {
+    this.loadAgencies();
    }
 
 
@@ -76,5 +89,18 @@ totalRecords=this.data.length
   }
   delete(id:any){
 
+  }
+  doAction(action:string){
+    switch (action) {
+      case "download":
+        this.showBottomSheet("Lista de Agencias","Agencias",this.records);
+        break;
+      case "new":
+        this.openForm()
+        break;
+    }
+  }
+  showBottomSheet(title: string, fileName: string, data: any) {
+    this.bottomSheet.open(DownloadComponent);
   }
 }

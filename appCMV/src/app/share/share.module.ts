@@ -13,12 +13,18 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { KeypadButtonComponent } from './components/keypad-button/keypad-button.component';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { DownloadComponent } from './components/download/download.component';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     TitleComponent,
     ContainerComponent,
     TableComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    KeypadButtonComponent,
+    DownloadComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +32,12 @@ import {MatIconModule} from '@angular/material/icon';
     FlexLayoutModule,
     MatCardModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTooltipModule,
+    MatIconModule,
+    MatButtonModule,
+    MatBottomSheetModule,
+    MatListModule
      
   ],
   exports: [
@@ -38,7 +49,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatTooltipModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    KeypadButtonComponent,
+    MatBottomSheetModule,
+    DownloadComponent,
+    MatListModule
   ]
 })
 export class ShareModule {
