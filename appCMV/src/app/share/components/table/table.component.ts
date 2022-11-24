@@ -1,4 +1,6 @@
-import { Component, Input, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+
+import { Component, ContentChildren, Input, OnInit, SimpleChanges,QueryList, ViewChild } from '@angular/core';
+import { MatColumnDef, MatTable } from '@angular/material/table';
 import { MetaDataColumn } from '../../interfaces/metacolumn.interface';
 
 @Component({
@@ -10,6 +12,9 @@ export class TableComponent implements OnInit {
 @Input() data: any;
 @Input() metaDataColumns!: MetaDataColumn[] 
 columns:string[]=[]
+@ContentChildren(MatColumnDef, { descendants: true }) columnDef!: QueryList<MatColumnDef>;
+@ViewChild(MatTable, { static: true }) table!: MatTable<any>;	
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +24,12 @@ columns:string[]=[]
       this.columns=this.metaDataColumns.map((x)=>x.field)
     }
   }
-
-
+  ngOnAfterContentInit(){
+    if(!this.columnDef){return}
+    this.columnDef.forEach(columnDef => {
+      this.columns.push(columnDef.name);
+      this.table.addColumnDef(columnDef);
+    })
+  }
 }
+

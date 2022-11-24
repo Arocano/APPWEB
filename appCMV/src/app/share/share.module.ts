@@ -10,7 +10,9 @@ import {MatTableModule} from '@angular/material/table';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     TitleComponent,
@@ -32,7 +34,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ContainerComponent,
     TableComponent,
     PerfectScrollbarModule,
-    PaginatorComponent
+    PaginatorComponent,
+    MatTooltipModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule
   ]
 })
 export class ShareModule {

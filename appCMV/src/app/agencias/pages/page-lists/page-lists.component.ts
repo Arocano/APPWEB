@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaDataColumn } from 'src/app/share/interfaces/metacolumn.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'cmv-page-lists',
@@ -63,5 +64,17 @@ totalRecords=this.data.length
   loadAgencies(){
     this.data=this.records
     this.totalRecords=this.records.length
+    this.changePage(0)
+  }
+  changePage(page:number){
+    const pageSize=environment.PAGE_SIZE;
+    const skip=pageSize*page;
+    this.data=this.records.slice(skip,skip+pageSize);
+  }
+  openForm(){
+
+  }
+  delete(id:any){
+
   }
 }
