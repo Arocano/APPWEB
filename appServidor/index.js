@@ -1,12 +1,25 @@
 const express = require('express');
 const cors = require('cors');
-const conecartDB=require('./config/db');
+const conectarDB = require('./config/db');
+
+//Crear el servidor
 const app = express();
 
-conecartDB();
+// Cargar el router
+
+
+//Conectar a la base de datos
+conectarDB();
 app.use(express.json());
 app.use(cors());
 
-app.get('/',(req,res)=>{res.send("Hola mundo")});
+app.get('/', (req, res) => {
+    // res.send('Hola mundo');
+    
+});
 
-app.listen(4500, () => console.log('Servidor corriendo en el puerto 4500'));
+app.use('/api/agencias', require('./routes/AgencyRoute'));
+
+app.listen(4500, () => {
+    console.log('Servidor funcionando');
+});
