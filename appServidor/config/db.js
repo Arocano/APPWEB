@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 require('dotenv').config({path: 'variables.env'});
-const conecartDB = async () => {
+const conectarDB = async () => {
     try {
         await mongoose.connect(process.env.DB_MONGO, {
             useNewUrlParser: true,
@@ -13,4 +13,4 @@ const conecartDB = async () => {
         process.exit(1); // Detener la app
     }
 }
-module.exports = conecartDB;
+module.exports = conectarDB;

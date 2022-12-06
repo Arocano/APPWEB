@@ -20,6 +20,6 @@ app.get('/', (req, res) => {
 
 app.use('/api/agencias', require('./routes/AgencyRoute'));
 
-app.listen(4500, () => {
+app.listen(3000, () => {
     console.log('Servidor funcionando');
 });
